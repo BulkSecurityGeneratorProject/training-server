@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="trainingApp.problem.detail.title">Problem</span> {{vm.problem.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.problem.problemUsername">Problem Username</span></dt>
+        <dd>
+            <span>{{vm.problem.problemUsername}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.problem.problemTitle">Problem Title</span></dt>
+        <dd>
+            <span>{{vm.problem.problemTitle}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.problem.problemContent">Problem Content</span></dt>
+        <dd>
+            <span>{{vm.problem.problemContent}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.problem.reservedOne">Reserved One</span></dt>
+        <dd>
+            <span>{{vm.problem.reservedOne}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.problem.reservedTwo">Reserved Two</span></dt>
+        <dd>
+            <span>{{vm.problem.reservedTwo}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.problem.user">User</span></dt>
+        <dd>
+            {{vm.problem.userId}}
+        </dd>
+        <dt><span data-translate="trainingApp.problem.forum">Forum</span></dt>
+        <dd>
+            <a ui-sref="forum-detail({id:vm.problem.forumId})">{{vm.problem.forumId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="problem-detail.edit({id:vm.problem.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

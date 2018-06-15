@@ -1,0 +1,37 @@
+
+{
+    "trainingApp": {
+        "course" : {
+            "home": {
+                "title": "Courses",
+                "createLabel": "创建新 Course",
+                "createOrEditLabel": "创建或编辑 Course"
+            },
+            "created": "Course {{ param }} 创建成功",
+            "updated": "Course {{ param }} 更新成功",
+            "deleted": "Course {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Course {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Course"
+            },
+            "courseName": "Course Name",
+            "courseImg": "Course Img",
+            "courseType": "Course Type",
+            "courseLevel": "Course Level",
+            "coursePhase": "Course Phase",
+            "courseContent": "Course Content",
+            "courseTeacher": "Course Teacher",
+            "courseTime": "Course Time",
+            "coursePeople": "Course People",
+            "courseStar": "Course Star",
+            "coursePrice": "Course Price",
+            "courseRecommendIndex": "Course Recommend Index",
+            "courseNewRecommendations": "Course New Recommendations",
+            "reservedOne": "Reserved One",
+            "reservedTwo": "Reserved Two",
+            "careerPath": "Career Path"
+        }
+    }
+}

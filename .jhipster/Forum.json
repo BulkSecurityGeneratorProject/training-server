@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "course",
+            "otherEntityName": "course",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "forumName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "forumImg",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "forunIntroduce",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reservedOne",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reservedTwo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180615065920",
+    "entityTableName": "forum",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

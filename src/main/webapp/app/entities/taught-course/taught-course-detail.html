@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="trainingApp.taughtCourse.detail.title">Taught Course</span> {{vm.taughtCourse.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.taughtCourse.active">Active</span></dt>
+        <dd>
+            <span>{{vm.taughtCourse.active}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.taughtCourse.reservedOne">Reserved One</span></dt>
+        <dd>
+            <span>{{vm.taughtCourse.reservedOne}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.taughtCourse.reservedTwo">Reserved Two</span></dt>
+        <dd>
+            <span>{{vm.taughtCourse.reservedTwo}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.taughtCourse.course">Course</span></dt>
+        <dd>
+            <a ui-sref="course-detail({id:vm.taughtCourse.courseId})">{{vm.taughtCourse.courseId}}</a>
+        </dd>
+        <dt><span data-translate="trainingApp.taughtCourse.user">User</span></dt>
+        <dd>
+            {{vm.taughtCourse.userId}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="taught-course-detail.edit({id:vm.taughtCourse.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

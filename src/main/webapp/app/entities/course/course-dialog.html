@@ -1,0 +1,122 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCourseLabel" data-translate="trainingApp.course.home.createOrEditLabel">Create or edit a Course</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.course.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.course.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseName" for="field_courseName">Course Name</label>
+            <input type="text" class="form-control" name="courseName" id="field_courseName"
+                    ng-model="vm.course.courseName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseImg" for="field_courseImg">Course Img</label>
+            <input type="text" class="form-control" name="courseImg" id="field_courseImg"
+                    ng-model="vm.course.courseImg"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseType" for="field_courseType">Course Type</label>
+            <input type="text" class="form-control" name="courseType" id="field_courseType"
+                    ng-model="vm.course.courseType"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseLevel" for="field_courseLevel">Course Level</label>
+            <input type="text" class="form-control" name="courseLevel" id="field_courseLevel"
+                    ng-model="vm.course.courseLevel"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.coursePhase" for="field_coursePhase">Course Phase</label>
+            <input type="text" class="form-control" name="coursePhase" id="field_coursePhase"
+                    ng-model="vm.course.coursePhase"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseContent" for="field_courseContent">Course Content</label>
+            <input type="text" class="form-control" name="courseContent" id="field_courseContent"
+                    ng-model="vm.course.courseContent"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseTeacher" for="field_courseTeacher">Course Teacher</label>
+            <input type="text" class="form-control" name="courseTeacher" id="field_courseTeacher"
+                    ng-model="vm.course.courseTeacher"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseTime" for="field_courseTime">Course Time</label>
+            <input type="number" class="form-control" name="courseTime" id="field_courseTime"
+                    ng-model="vm.course.courseTime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.coursePeople" for="field_coursePeople">Course People</label>
+            <input type="number" class="form-control" name="coursePeople" id="field_coursePeople"
+                    ng-model="vm.course.coursePeople"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseStar" for="field_courseStar">Course Star</label>
+            <input type="number" class="form-control" name="courseStar" id="field_courseStar"
+                    ng-model="vm.course.courseStar"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.coursePrice" for="field_coursePrice">Course Price</label>
+            <input type="number" class="form-control" name="coursePrice" id="field_coursePrice"
+                    ng-model="vm.course.coursePrice"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseRecommendIndex" for="field_courseRecommendIndex">Course Recommend Index</label>
+            <input type="number" class="form-control" name="courseRecommendIndex" id="field_courseRecommendIndex"
+                    ng-model="vm.course.courseRecommendIndex"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.courseNewRecommendations" for="field_courseNewRecommendations">Course New Recommendations</label>
+            <input type="number" class="form-control" name="courseNewRecommendations" id="field_courseNewRecommendations"
+                    ng-model="vm.course.courseNewRecommendations"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.reservedOne" for="field_reservedOne">Reserved One</label>
+            <input type="text" class="form-control" name="reservedOne" id="field_reservedOne"
+                    ng-model="vm.course.reservedOne"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.course.reservedTwo" for="field_reservedTwo">Reserved Two</label>
+            <input type="text" class="form-control" name="reservedTwo" id="field_reservedTwo"
+                    ng-model="vm.course.reservedTwo"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="trainingApp.course.careerPath" for="field_careerPath">Career Path</label>
+            <select class="form-control" id="field_careerPath" name="careerPath" ng-model="vm.course.careerPathId" ng-options="careerPath.id as careerPath.id for careerPath in vm.careerpaths"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

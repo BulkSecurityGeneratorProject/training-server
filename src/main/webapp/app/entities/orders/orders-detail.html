@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="trainingApp.orders.detail.title">Orders</span> {{vm.orders.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.orders.orderNumber">Order Number</span></dt>
+        <dd>
+            <span>{{vm.orders.orderNumber}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.orders.dateOfPayment">Date Of Payment</span></dt>
+        <dd>
+            <span>{{vm.orders.dateOfPayment | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.orders.payTheAmount">Pay The Amount</span></dt>
+        <dd>
+            <span>{{vm.orders.payTheAmount}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.orders.theDrawee">The Drawee</span></dt>
+        <dd>
+            <span>{{vm.orders.theDrawee}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.orders.payForCourses">Pay For Courses</span></dt>
+        <dd>
+            <span>{{vm.orders.payForCourses}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.orders.reservedOne">Reserved One</span></dt>
+        <dd>
+            <span>{{vm.orders.reservedOne}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.orders.reservedTwo">Reserved Two</span></dt>
+        <dd>
+            <span>{{vm.orders.reservedTwo}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.orders.course">Course</span></dt>
+        <dd>
+            <a ui-sref="course-detail({id:vm.orders.courseId})">{{vm.orders.courseId}}</a>
+        </dd>
+        <dt><span data-translate="trainingApp.orders.user">User</span></dt>
+        <dd>
+            {{vm.orders.userId}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="orders-detail.edit({id:vm.orders.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

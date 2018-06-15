@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="trainingApp.careerPath.detail.title">Career Path</span> {{vm.careerPath.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.careerPath.careerPathName">Career Path Name</span></dt>
+        <dd>
+            <span>{{vm.careerPath.careerPathName}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.careerPath.careerPathIntroduce">Career Path Introduce</span></dt>
+        <dd>
+            <span>{{vm.careerPath.careerPathIntroduce}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.careerPath.careerPathImg">Career Path Img</span></dt>
+        <dd>
+            <span>{{vm.careerPath.careerPathImg}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.careerPath.reservedOne">Reserved One</span></dt>
+        <dd>
+            <span>{{vm.careerPath.reservedOne}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.careerPath.reservedTwo">Reserved Two</span></dt>
+        <dd>
+            <span>{{vm.careerPath.reservedTwo}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="career-path-detail.edit({id:vm.careerPath.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

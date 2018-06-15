@@ -1,0 +1,26 @@
+
+{
+    "trainingApp": {
+        "taughtCourse" : {
+            "home": {
+                "title": "Taught Courses",
+                "createLabel": "创建新 Taught Course",
+                "createOrEditLabel": "创建或编辑 Taught Course"
+            },
+            "created": "Taught Course {{ param }} 创建成功",
+            "updated": "Taught Course {{ param }} 更新成功",
+            "deleted": "Taught Course {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Taught Course {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Taught Course"
+            },
+            "active": "Active",
+            "reservedOne": "Reserved One",
+            "reservedTwo": "Reserved Two",
+            "course": "Course",
+            "user": "User"
+        }
+    }
+}

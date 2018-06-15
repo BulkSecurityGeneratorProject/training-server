@@ -1,0 +1,92 @@
+<div>
+    <h2 data-translate="trainingApp.course.home.title">Courses</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="course.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="trainingApp.course.home.createLabel">
+                        Create new Course
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseName"><span data-translate="trainingApp.course.courseName">Course Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseImg"><span data-translate="trainingApp.course.courseImg">Course Img</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseType"><span data-translate="trainingApp.course.courseType">Course Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseLevel"><span data-translate="trainingApp.course.courseLevel">Course Level</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coursePhase"><span data-translate="trainingApp.course.coursePhase">Course Phase</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseContent"><span data-translate="trainingApp.course.courseContent">Course Content</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseTeacher"><span data-translate="trainingApp.course.courseTeacher">Course Teacher</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseTime"><span data-translate="trainingApp.course.courseTime">Course Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coursePeople"><span data-translate="trainingApp.course.coursePeople">Course People</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseStar"><span data-translate="trainingApp.course.courseStar">Course Star</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coursePrice"><span data-translate="trainingApp.course.coursePrice">Course Price</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseRecommendIndex"><span data-translate="trainingApp.course.courseRecommendIndex">Course Recommend Index</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseNewRecommendations"><span data-translate="trainingApp.course.courseNewRecommendations">Course New Recommendations</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reservedOne"><span data-translate="trainingApp.course.reservedOne">Reserved One</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reservedTwo"><span data-translate="trainingApp.course.reservedTwo">Reserved Two</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="careerPathId"><span data-translate="trainingApp.course.careerPath">Career Path</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="course in vm.courses track by course.id">
+                    <td><a ui-sref="course-detail({id:course.id})">{{course.id}}</a></td>
+                    <td>{{course.courseName}}</td>
+                    <td>{{course.courseImg}}</td>
+                    <td>{{course.courseType}}</td>
+                    <td>{{course.courseLevel}}</td>
+                    <td>{{course.coursePhase}}</td>
+                    <td>{{course.courseContent}}</td>
+                    <td>{{course.courseTeacher}}</td>
+                    <td>{{course.courseTime}}</td>
+                    <td>{{course.coursePeople}}</td>
+                    <td>{{course.courseStar}}</td>
+                    <td>{{course.coursePrice}}</td>
+                    <td>{{course.courseRecommendIndex}}</td>
+                    <td>{{course.courseNewRecommendations}}</td>
+                    <td>{{course.reservedOne}}</td>
+                    <td>{{course.reservedTwo}}</td>
+                    <td>
+                        <a ui-sref="career-path-detail({id:course.careerPathId})">{{course.careerPathId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="course-detail({id:course.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="course.edit({id:course.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="course.delete({id:course.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

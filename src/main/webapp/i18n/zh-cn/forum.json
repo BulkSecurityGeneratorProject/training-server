@@ -1,0 +1,27 @@
+
+{
+    "trainingApp": {
+        "forum" : {
+            "home": {
+                "title": "Forums",
+                "createLabel": "创建新 Forum",
+                "createOrEditLabel": "创建或编辑 Forum"
+            },
+            "created": "Forum {{ param }} 创建成功",
+            "updated": "Forum {{ param }} 更新成功",
+            "deleted": "Forum {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Forum {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Forum"
+            },
+            "forumName": "Forum Name",
+            "forumImg": "Forum Img",
+            "forunIntroduce": "Forun Introduce",
+            "reservedOne": "Reserved One",
+            "reservedTwo": "Reserved Two",
+            "course": "Course"
+        }
+    }
+}

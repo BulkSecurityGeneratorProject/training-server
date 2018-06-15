@@ -1,0 +1,80 @@
+<div>
+    <h2 data-translate="trainingApp.orders.home.title">Orders</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="orders.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="trainingApp.orders.home.createLabel">
+                        Create new Orders
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="orderNumber"><span data-translate="trainingApp.orders.orderNumber">Order Number</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateOfPayment"><span data-translate="trainingApp.orders.dateOfPayment">Date Of Payment</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="payTheAmount"><span data-translate="trainingApp.orders.payTheAmount">Pay The Amount</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="theDrawee"><span data-translate="trainingApp.orders.theDrawee">The Drawee</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="payForCourses"><span data-translate="trainingApp.orders.payForCourses">Pay For Courses</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reservedOne"><span data-translate="trainingApp.orders.reservedOne">Reserved One</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reservedTwo"><span data-translate="trainingApp.orders.reservedTwo">Reserved Two</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="courseId"><span data-translate="trainingApp.orders.course">Course</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="userId"><span data-translate="trainingApp.orders.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="orders in vm.orders track by orders.id">
+                    <td><a ui-sref="orders-detail({id:orders.id})">{{orders.id}}</a></td>
+                    <td>{{orders.orderNumber}}</td>
+                    <td>{{orders.dateOfPayment | date:'medium'}}</td>
+                    <td>{{orders.payTheAmount}}</td>
+                    <td>{{orders.theDrawee}}</td>
+                    <td>{{orders.payForCourses}}</td>
+                    <td>{{orders.reservedOne}}</td>
+                    <td>{{orders.reservedTwo}}</td>
+                    <td>
+                        <a ui-sref="course-detail({id:orders.courseId})">{{orders.courseId}}</a>
+                    </td>
+                    <td>
+                        {{orders.userId}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="orders-detail({id:orders.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="orders.edit({id:orders.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="orders.delete({id:orders.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

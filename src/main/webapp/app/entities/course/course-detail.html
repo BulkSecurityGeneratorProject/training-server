@@ -1,0 +1,83 @@
+
+<div>
+    <h2><span data-translate="trainingApp.course.detail.title">Course</span> {{vm.course.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.course.courseName">Course Name</span></dt>
+        <dd>
+            <span>{{vm.course.courseName}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.courseImg">Course Img</span></dt>
+        <dd>
+            <span>{{vm.course.courseImg}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.courseType">Course Type</span></dt>
+        <dd>
+            <span>{{vm.course.courseType}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.courseLevel">Course Level</span></dt>
+        <dd>
+            <span>{{vm.course.courseLevel}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.coursePhase">Course Phase</span></dt>
+        <dd>
+            <span>{{vm.course.coursePhase}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.courseContent">Course Content</span></dt>
+        <dd>
+            <span>{{vm.course.courseContent}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.courseTeacher">Course Teacher</span></dt>
+        <dd>
+            <span>{{vm.course.courseTeacher}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.courseTime">Course Time</span></dt>
+        <dd>
+            <span>{{vm.course.courseTime}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.coursePeople">Course People</span></dt>
+        <dd>
+            <span>{{vm.course.coursePeople}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.courseStar">Course Star</span></dt>
+        <dd>
+            <span>{{vm.course.courseStar}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.coursePrice">Course Price</span></dt>
+        <dd>
+            <span>{{vm.course.coursePrice}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.courseRecommendIndex">Course Recommend Index</span></dt>
+        <dd>
+            <span>{{vm.course.courseRecommendIndex}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.courseNewRecommendations">Course New Recommendations</span></dt>
+        <dd>
+            <span>{{vm.course.courseNewRecommendations}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.reservedOne">Reserved One</span></dt>
+        <dd>
+            <span>{{vm.course.reservedOne}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.reservedTwo">Reserved Two</span></dt>
+        <dd>
+            <span>{{vm.course.reservedTwo}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.course.careerPath">Career Path</span></dt>
+        <dd>
+            <a ui-sref="career-path-detail({id:vm.course.careerPathId})">{{vm.course.careerPathId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="course-detail.edit({id:vm.course.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

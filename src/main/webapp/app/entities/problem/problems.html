@@ -1,0 +1,76 @@
+<div>
+    <h2 data-translate="trainingApp.problem.home.title">Problems</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="problem.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="trainingApp.problem.home.createLabel">
+                        Create new Problem
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="problemUsername"><span data-translate="trainingApp.problem.problemUsername">Problem Username</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="problemTitle"><span data-translate="trainingApp.problem.problemTitle">Problem Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="problemContent"><span data-translate="trainingApp.problem.problemContent">Problem Content</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reservedOne"><span data-translate="trainingApp.problem.reservedOne">Reserved One</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reservedTwo"><span data-translate="trainingApp.problem.reservedTwo">Reserved Two</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="userId"><span data-translate="trainingApp.problem.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="forumId"><span data-translate="trainingApp.problem.forum">Forum</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="problem in vm.problems track by problem.id">
+                    <td><a ui-sref="problem-detail({id:problem.id})">{{problem.id}}</a></td>
+                    <td>{{problem.problemUsername}}</td>
+                    <td>{{problem.problemTitle}}</td>
+                    <td>{{problem.problemContent}}</td>
+                    <td>{{problem.reservedOne}}</td>
+                    <td>{{problem.reservedTwo}}</td>
+                    <td>
+                        {{problem.userId}}
+                    </td>
+                    <td>
+                        <a ui-sref="forum-detail({id:problem.forumId})">{{problem.forumId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="problem-detail({id:problem.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="problem.edit({id:problem.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="problem.delete({id:problem.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

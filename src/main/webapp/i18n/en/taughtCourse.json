@@ -1,0 +1,26 @@
+
+{
+    "trainingApp": {
+        "taughtCourse" : {
+            "home": {
+                "title": "Taught Courses",
+                "createLabel": "Create a new Taught Course",
+                "createOrEditLabel": "Create or edit a Taught Course"
+            },
+            "created": "A new Taught Course is created with identifier {{ param }}",
+            "updated": "A Taught Course is updated with identifier {{ param }}",
+            "deleted": "A Taught Course is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Taught Course {{ id }}?"
+            },
+            "detail": {
+                "title": "Taught Course"
+            },
+            "active": "Active",
+            "reservedOne": "Reserved One",
+            "reservedTwo": "Reserved Two",
+            "course": "Course",
+            "user": "User"
+        }
+    }
+}

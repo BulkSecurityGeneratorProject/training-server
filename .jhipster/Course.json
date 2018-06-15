@@ -1,0 +1,79 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "careerPath",
+            "otherEntityName": "careerPath",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "courseName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "courseImg",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "courseType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "courseLevel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coursePhase",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "courseContent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "courseTeacher",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "courseTime",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "coursePeople",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "courseStar",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "coursePrice",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "courseRecommendIndex",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "courseNewRecommendations",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "reservedOne",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reservedTwo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180615065915",
+    "entityTableName": "course",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

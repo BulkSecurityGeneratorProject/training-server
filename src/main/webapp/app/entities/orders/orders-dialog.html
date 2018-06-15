@@ -1,0 +1,84 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myOrdersLabel" data-translate="trainingApp.orders.home.createOrEditLabel">Create or edit a Orders</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.orders.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.orders.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.orders.orderNumber" for="field_orderNumber">Order Number</label>
+            <input type="number" class="form-control" name="orderNumber" id="field_orderNumber"
+                    ng-model="vm.orders.orderNumber"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.orders.dateOfPayment" for="field_dateOfPayment">Date Of Payment</label>
+                <div class="input-group">
+                    <input id="field_dateOfPayment" type="text" class="form-control" name="dateOfPayment" datetime-picker="{{dateformat}}" ng-model="vm.orders.dateOfPayment" is-open="vm.datePickerOpenStatus.dateOfPayment"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfPayment')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.orders.payTheAmount" for="field_payTheAmount">Pay The Amount</label>
+            <input type="number" class="form-control" name="payTheAmount" id="field_payTheAmount"
+                    ng-model="vm.orders.payTheAmount"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.orders.theDrawee" for="field_theDrawee">The Drawee</label>
+            <input type="text" class="form-control" name="theDrawee" id="field_theDrawee"
+                    ng-model="vm.orders.theDrawee"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.orders.payForCourses" for="field_payForCourses">Pay For Courses</label>
+            <input type="text" class="form-control" name="payForCourses" id="field_payForCourses"
+                    ng-model="vm.orders.payForCourses"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.orders.reservedOne" for="field_reservedOne">Reserved One</label>
+            <input type="text" class="form-control" name="reservedOne" id="field_reservedOne"
+                    ng-model="vm.orders.reservedOne"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.orders.reservedTwo" for="field_reservedTwo">Reserved Two</label>
+            <input type="text" class="form-control" name="reservedTwo" id="field_reservedTwo"
+                    ng-model="vm.orders.reservedTwo"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="trainingApp.orders.course" for="field_course">Course</label>
+            <select class="form-control" id="field_course" name="course" ng-model="vm.orders.courseId" ng-options="course.id as course.id for course in vm.courses"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="trainingApp.orders.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.orders.userId" ng-options="user.id as user.id for user in vm.users"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

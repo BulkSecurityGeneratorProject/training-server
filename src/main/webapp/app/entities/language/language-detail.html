@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="trainingApp.language.detail.title">Language</span> {{vm.language.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.language.languageName">Language Name</span></dt>
+        <dd>
+            <span>{{vm.language.languageName}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.language.languageImg">Language Img</span></dt>
+        <dd>
+            <span>{{vm.language.languageImg}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.language.reservedOne">Reserved One</span></dt>
+        <dd>
+            <span>{{vm.language.reservedOne}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.language.reservedTwo">Reserved Two</span></dt>
+        <dd>
+            <span>{{vm.language.reservedTwo}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.language.forum">Forum</span></dt>
+        <dd>
+            <a ui-sref="forum-detail({id:vm.language.forumId})">{{vm.language.forumId}}</a>
+        </dd>
+        <dt><span data-translate="trainingApp.language.course">Course</span></dt>
+        <dd>
+            <a ui-sref="course-detail({id:vm.language.courseId})">{{vm.language.courseId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="language-detail.edit({id:vm.language.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

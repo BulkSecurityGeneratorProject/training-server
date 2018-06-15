@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCareerPathLabel" data-translate="trainingApp.careerPath.home.createOrEditLabel">Create or edit a Career Path</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.careerPath.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.careerPath.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.careerPath.careerPathName" for="field_careerPathName">Career Path Name</label>
+            <input type="text" class="form-control" name="careerPathName" id="field_careerPathName"
+                    ng-model="vm.careerPath.careerPathName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.careerPath.careerPathIntroduce" for="field_careerPathIntroduce">Career Path Introduce</label>
+            <input type="text" class="form-control" name="careerPathIntroduce" id="field_careerPathIntroduce"
+                    ng-model="vm.careerPath.careerPathIntroduce"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.careerPath.careerPathImg" for="field_careerPathImg">Career Path Img</label>
+            <input type="text" class="form-control" name="careerPathImg" id="field_careerPathImg"
+                    ng-model="vm.careerPath.careerPathImg"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.careerPath.reservedOne" for="field_reservedOne">Reserved One</label>
+            <input type="text" class="form-control" name="reservedOne" id="field_reservedOne"
+                    ng-model="vm.careerPath.reservedOne"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.careerPath.reservedTwo" for="field_reservedTwo">Reserved Two</label>
+            <input type="text" class="form-control" name="reservedTwo" id="field_reservedTwo"
+                    ng-model="vm.careerPath.reservedTwo"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

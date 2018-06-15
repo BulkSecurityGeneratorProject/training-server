@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "course",
+            "otherEntityName": "course",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "courseSectionTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reservedOne",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reservedTwo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180615065916",
+    "entityTableName": "course_section",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

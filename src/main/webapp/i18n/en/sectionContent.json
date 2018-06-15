@@ -1,0 +1,27 @@
+
+{
+    "trainingApp": {
+        "sectionContent" : {
+            "home": {
+                "title": "Section Contents",
+                "createLabel": "Create a new Section Content",
+                "createOrEditLabel": "Create or edit a Section Content"
+            },
+            "created": "A new Section Content is created with identifier {{ param }}",
+            "updated": "A Section Content is updated with identifier {{ param }}",
+            "deleted": "A Section Content is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Section Content {{ id }}?"
+            },
+            "detail": {
+                "title": "Section Content"
+            },
+            "sectionTime": "Section Time",
+            "sectionTitle": "Section Title",
+            "sectionContent": "Section Content",
+            "reservedOne": "Reserved One",
+            "reservedTwo": "Reserved Two",
+            "courseSection": "Course Section"
+        }
+    }
+}

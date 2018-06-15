@@ -1,0 +1,25 @@
+
+{
+    "trainingApp": {
+        "courseSection" : {
+            "home": {
+                "title": "Course Sections",
+                "createLabel": "创建新 Course Section",
+                "createOrEditLabel": "创建或编辑 Course Section"
+            },
+            "created": "Course Section {{ param }} 创建成功",
+            "updated": "Course Section {{ param }} 更新成功",
+            "deleted": "Course Section {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Course Section {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Course Section"
+            },
+            "courseSectionTitle": "Course Section Title",
+            "reservedOne": "Reserved One",
+            "reservedTwo": "Reserved Two",
+            "course": "Course"
+        }
+    }
+}

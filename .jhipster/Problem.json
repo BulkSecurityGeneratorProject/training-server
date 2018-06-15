@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "forum",
+            "otherEntityName": "forum",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "problemUsername",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "problemTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "problemContent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reservedOne",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reservedTwo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180615065922",
+    "entityTableName": "problem",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

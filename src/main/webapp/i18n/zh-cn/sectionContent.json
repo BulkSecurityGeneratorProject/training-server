@@ -1,0 +1,27 @@
+
+{
+    "trainingApp": {
+        "sectionContent" : {
+            "home": {
+                "title": "Section Contents",
+                "createLabel": "创建新 Section Content",
+                "createOrEditLabel": "创建或编辑 Section Content"
+            },
+            "created": "Section Content {{ param }} 创建成功",
+            "updated": "Section Content {{ param }} 更新成功",
+            "deleted": "Section Content {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Section Content {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Section Content"
+            },
+            "sectionTime": "Section Time",
+            "sectionTitle": "Section Title",
+            "sectionContent": "Section Content",
+            "reservedOne": "Reserved One",
+            "reservedTwo": "Reserved Two",
+            "courseSection": "Course Section"
+        }
+    }
+}

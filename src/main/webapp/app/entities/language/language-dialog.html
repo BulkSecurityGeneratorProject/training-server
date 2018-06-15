@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myLanguageLabel" data-translate="trainingApp.language.home.createOrEditLabel">Create or edit a Language</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.language.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.language.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.language.languageName" for="field_languageName">Language Name</label>
+            <input type="text" class="form-control" name="languageName" id="field_languageName"
+                    ng-model="vm.language.languageName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.language.languageImg" for="field_languageImg">Language Img</label>
+            <input type="text" class="form-control" name="languageImg" id="field_languageImg"
+                    ng-model="vm.language.languageImg"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.language.reservedOne" for="field_reservedOne">Reserved One</label>
+            <input type="text" class="form-control" name="reservedOne" id="field_reservedOne"
+                    ng-model="vm.language.reservedOne"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.language.reservedTwo" for="field_reservedTwo">Reserved Two</label>
+            <input type="text" class="form-control" name="reservedTwo" id="field_reservedTwo"
+                    ng-model="vm.language.reservedTwo"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="trainingApp.language.forum" for="field_forum">Forum</label>
+            <select class="form-control" id="field_forum" name="forum" ng-model="vm.language.forumId" ng-options="forum.id as forum.id for forum in vm.forums"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="trainingApp.language.course" for="field_course">Course</label>
+            <select class="form-control" id="field_course" name="course" ng-model="vm.language.courseId" ng-options="course.id as course.id for course in vm.courses"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,111 @@
+entity Course { // 课程
+    courseName String
+    courseImg String
+    courseType String // 课程所属职业路径
+    courseLevel String
+    coursePhase String // 阶段
+    courseContent String
+    courseTeacher String // 授课教师
+    courseTime Integer // 课程时长
+    coursePeople Integer // 累计观看人数
+    courseStar Integer // 获得评价星星数
+    coursePrice Integer // 课程价格
+    courseRecommendIndex Integer // 实战推荐指数
+    courseNewRecommendations Integer // 新课推荐指数
+    reservedOne String // 预留字段1
+    reservedTwo String // 预留字段2
+}
+
+entity CourseSection { // 课程章节
+	courseSectionTitle String // 课程章节标题
+    reservedOne String // 预留字段1
+    reservedTwo String // 预留字段2
+}
+
+entity SectionContent { // 章节内容
+	sectionTime Integer // 章节时长
+    sectionTitle String // 章节小标题
+    sectionContent String // 章节内容
+    reservedOne String// 预留字段1
+    reservedTwo String // 预留字段2
+}
+
+entity TaughtCourse { // 已/正学习课程
+	active Boolean //是否学完
+	reservedOne String // 预留字段1
+    reservedTwo String // 预留字段2
+} 
+
+entity CareerPath { // 职业路径
+	careerPathName String
+    careerPathIntroduce String // 职业路径介绍
+    careerPathImg String
+    reservedOne String // 预留字段1
+    reservedTwo String // 预留字段2
+}
+
+entity Forum { // 论坛
+    forumName String
+    forumImg String
+    forunIntroduce String // 论坛介绍
+    reservedOne String // 预留字段1
+    reservedTwo String // 预留字段2
+}
+
+entity Language { // 编程语言
+    languageName String
+    languageImg String
+    reservedOne String // 预留字段1
+    reservedTwo String // 预留字段2
+}
+
+entity Problem { // 提问
+    problemUsername String
+    problemTitle String
+    problemContent String
+    reservedOne String // 预留字段1
+    reservedTwo String // 预留字段2
+}
+
+entity Answer { // 解答
+    answerUsername String
+    answerContent String
+    answerCorrect Boolean // 回答是否能解决问题
+    reservedOne String // 预留字段1
+    reservedTwo String // 预留字段2
+}
+
+entity Orders { // 订单
+	orderNumber Integer // 订单编号
+    dateOfPayment ZonedDateTime // 支付日期
+    payTheAmount Integer // 支付金额
+    theDrawee String // 付款人
+    payForCourses String // 付费课程
+    reservedOne String// 预留字段1
+    reservedTwo String // 预留字段2
+}
+
+relationship OneToOne {
+	TaughtCourse{course} to Course
+}
+
+relationship ManyToOne {
+    Problem{user} to User
+    Problem{forum} to Forum
+    Answer{user} to User
+    Answer{problem} to Problem
+    Orders{course} to Course
+    Orders{user} to User
+    Forum{course} to Course
+    TaughtCourse{user} to User
+    Language{forum} to Forum
+    Course{careerPath} to CareerPath
+    Language{course} to Course
+    CourseSection{course} to Course
+    SectionContent{courseSection} to CourseSection
+}
+
+
+dto * with mapstruct
+service all with serviceImpl
+paginate all with pagination
